@@ -15,16 +15,24 @@
 		struct Input {
 			float2 uv_MainTex;
 		};
-
+		
 		void surf (Input IN, inout SurfaceOutput o) {
-			fixed ia = tex2D (_MainTex, IN.uv_MainTex).a;
-			int sy =  (ia * 255) /4;
-			int sx =  fmod((ia * 255),4);
-			float ux = frac(IN.uv_MainTex.x*512) /4;
-			float uy = frac(IN.uv_MainTex.y*512) /4+sy;
+			float width =1024;
+			half2 suv=IN.uv_MainTex;//source UV
 
-			half4 c = tex2D (_BlockTex,float2(ux,uy));
+			//qu int
+		    half2 uv = half2((int)(suv.x*width),(int)(suv.y*width));
+			fixed ia = tex2D (_MainTex, uv/width).a;
+
+			fixed sy =  ((int)(ia*16/4))*0.25;
+			fixed sx =  fmod((ia * 16),4)*0.25;
+			float ux = (frac(suv.x*width)) *0.25 ;
+			float uy = frac(suv.y*width)*0.25+sy;
+
+
+			half4 c = tex2D (_BlockTex,half3(ux,uy,0.9));
 			o.Albedo = c.rgb;
+
 			o.Alpha = 1;
 		}
 		ENDCG
