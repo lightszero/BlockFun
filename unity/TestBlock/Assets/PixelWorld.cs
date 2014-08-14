@@ -22,7 +22,7 @@ public class PixelWorld:MonoBehaviour
     worldData[,] wordData
     {
         get;
-        private set;
+        set;
     }
     public Texture2D wTex
     {
