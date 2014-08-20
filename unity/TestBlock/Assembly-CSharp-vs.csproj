@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CreateBox.cs" />
+     <Compile Include="Assets\KDTree2.cs" />
      <Compile Include="Assets\PixelWorld.cs" />
+     <Compile Include="Assets\pixeltest.cs" />
      <Compile Include="Assets\tcam.cs" />
+     <None Include="Assets\mat\Sprites-DF.shader.txt" />
+     <None Include="Assets\mat\pixel.shader" />
      <None Include="Assets\mat\mats.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
