@@ -17,6 +17,7 @@ public class pixeltest : MonoBehaviour
 
     void LoadTexDistanceField(string name)
     {
+#if UNITY_STANDALONE
         string filename = System.IO.Path.Combine(Application.streamingAssetsPath, name + ".png");
         string filename_df = System.IO.Path.Combine(Application.streamingAssetsPath, name + "_df.png");
         //if (System.IO.File.Exists(filename_df))
@@ -72,6 +73,7 @@ public class pixeltest : MonoBehaviour
             System.IO.File.WriteAllBytes(filename_df,  tex.EncodeToPNG());//保存为新文件
             texs[name] = tex;
         }
+#endif
     }
     void FindBorder(int w, int h, Color32[] colors, List<KDTree2D.Train> points)
     {
