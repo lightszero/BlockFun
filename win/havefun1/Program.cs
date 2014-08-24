@@ -65,13 +65,13 @@ namespace havefun
             float scale = 0f;
             while (true)
             {
-                rotate += 0.1f;
-                jump += 2;
+                rotate += 0.1f;//旋转
+                jump += 2;//跳跃
                 if (jump > 10) jump = 0;
                 scale += 0.3f;
                 if (scale > 2.0f) scale = 0f;
-                float rscale = Math.Abs(scale - 1.0f) + 1.0f;
-                shader.mat.m11 = (float)Math.Cos(rotate) * rscale;//旋转
+                float rscale = Math.Abs(scale - 1.0f) + 1.0f;//我眯眯眼
+                shader.mat.m11 = (float)Math.Cos(rotate) * rscale;
                 shader.mat.m12 = (float)-Math.Sin(rotate);
                 shader.mat.m21 = (float)Math.Sin(rotate);
                 shader.mat.m22 = (float)Math.Cos(rotate) / rscale;
