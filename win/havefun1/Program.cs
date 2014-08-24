@@ -59,17 +59,23 @@ namespace havefun
             MyShader shader = new MyShader();
             shader.mat = new Matrix();
             shader.mat.m14 = 40;
-            shader.mat.m24 = 10;
+            shader.mat.m24 = 15;
             float rotate = 0;
-
+            float jump = 0;
+            float scale = 0f;
             while (true)
             {
                 rotate += 0.1f;
-                shader.mat.m11 = (float)Math.Cos(rotate);//旋转
+                jump += 2;
+                if (jump > 10) jump = 0;
+                scale += 0.3f;
+                if (scale > 2.0f) scale = 0f;
+                float rscale = Math.Abs(scale - 1.0f) + 1.0f;
+                shader.mat.m11 = (float)Math.Cos(rotate) * rscale;//旋转
                 shader.mat.m12 = (float)-Math.Sin(rotate);
                 shader.mat.m21 = (float)Math.Sin(rotate);
-                shader.mat.m22 = (float)Math.Cos(rotate);
-
+                shader.mat.m22 = (float)Math.Cos(rotate) / rscale;
+                shader.mat.m24 = 15 -Math.Abs(jump-5);
                 Console.Clear();
                 for (int i = 0; i < vec3.Count / 3; i++)
                 {
