@@ -1,0 +1,20 @@
+Initialize engine version: 4.6.0b17 (2d43734a3870)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 430 (ID=0xde1)
+    Vendor:   NVIDIA
+    VRAM:     460 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.041 seconds
+desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\github\BlockFun\unity\letusbead\out\r_Data\Managed\System.Core.dll (this message is harmless)
