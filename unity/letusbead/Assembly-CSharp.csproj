@@ -49,6 +49,7 @@
      <Compile Include="Assets\com_ColorPick.cs" />
      <Compile Include="Assets\com_pixelEdit.cs" />
      <Compile Include="Assets\edit.cs" />
+     <Compile Include="Assets\openbtn.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
