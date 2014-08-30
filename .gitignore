@@ -53,3 +53,9 @@ $RECYCLE.BIN/
 *.msp
 /win/havefun/bin
 /win/havefun/bin
+/unity/letusbead/outweb
+/unity/letusbead/Temp
+/unity/letusbead/Library
+/unity/letusbead/obj
+/unity/letusbead/*.csproj
+/unity/letusbead/*.sln
