@@ -13,6 +13,11 @@ public class edit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _edit.drawColor = pick.GetPickColor();
+        if(_edit.drawColor!= pick.GetPickColor())
+            _edit.drawColor = pick.GetPickColor();
+        if (_edit.drawIndex != pick.GetPickColorIndex()) 
+            _edit.drawIndex = pick.GetPickColorIndex();
+        if (_edit.palette != pick.GetPalette()) 
+            _edit.palette = pick.GetPalette();
 	}
 }

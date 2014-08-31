@@ -7,7 +7,7 @@ public class openbtn : MonoBehaviour {
 	void Start () {
         this.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
             {
-                Application.OpenURL("file://d:/");
+                Application.OpenURL(Application.persistentDataPath);
             });
 	}
 	

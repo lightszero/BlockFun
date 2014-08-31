@@ -19,6 +19,14 @@ public class com_ColorPick : MonoBehaviour
         colorIndex = index;
         ChangeColorH();
     }
+    public byte GetPickColorIndex()
+    {
+        return (byte)colorIndex;
+    }
+    public Texture2D GetPalette()
+    {
+        return colorIndexTex;
+    }
     public Transform PickPanel;
     // Use this for initialization
 
