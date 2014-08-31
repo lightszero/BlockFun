@@ -24,15 +24,15 @@ public class savebtn : MonoBehaviour
                tex.Apply();
                var color = tex.EncodeToPNG();
                Object.Destroy(tex);
-               using (System.IO.Stream s = System.IO.File.Create(Application.persistentDataPath + "/temp_c.png"))
+               using (System.IO.Stream s = System.IO.File.Create(Application.temporaryCachePath + "/temp_c.png"))
                {
                    s.Write(color, 0, color.Length);
                }
-               using (System.IO.Stream s = System.IO.File.Create(Application.persistentDataPath + "/temp_p.png"))
+               using (System.IO.Stream s = System.IO.File.Create(Application.temporaryCachePath + "/temp_p.png"))
                {
                    s.Write(palette, 0, palette.Length);
                }
-               using (System.IO.Stream s = System.IO.File.Create(Application.persistentDataPath + "/temp_i.png"))
+               using (System.IO.Stream s = System.IO.File.Create(Application.temporaryCachePath + "/temp_i.png"))
                {
                    s.Write(index, 0, index.Length);
                }
