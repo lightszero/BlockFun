@@ -59,3 +59,5 @@ $RECYCLE.BIN/
 /unity/letusbead/obj
 /unity/letusbead/*.csproj
 /unity/letusbead/*.sln
+/unity/TestBlock/bin
+/unity/TestBlock/*.csproj
