@@ -32,7 +32,7 @@
 
 			float sux = frac(IN.uv_MainTex.x*_DrawSize.x) ;
 			float suy = frac(IN.uv_MainTex.y*_DrawSize.y);
-			float4 sc = tex2Dbias (_SharpTex, float4(sux,suy,0,-5));
+			float4 sc = tex2D (_SharpTex, float2(sux,suy));
 
 			o.Emission = cc.rgb*sc.rgb;
 			o.Alpha = cc.a*sc.a;

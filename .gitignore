@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 /unity/letusbead/*.sln
 /unity/TestBlock/bin
 /unity/TestBlock/*.csproj
+
+*.userprefs
