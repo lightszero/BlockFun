@@ -298,7 +298,7 @@ public class com_pixelEdit : MonoBehaviour
     void ShowNormal()
     {
         if (editNormal == null) return;
-        drawpanel.material = new Material(Shader.Find("Unlit/Texture"));
+        drawpanel.material =       new Material(Shader.Find("Custom/show_normal"));
         drawpanel.material.SetTexture("_MainTex", editNormal);
         drawpanel.texture = editNormal;
     }
