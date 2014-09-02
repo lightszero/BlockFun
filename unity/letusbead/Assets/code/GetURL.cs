@@ -20,6 +20,6 @@ public class GetURL : MonoBehaviour
 
         input.value = fullUrl.Substring(i + 1);
         fullUrl = fullUrl.Substring(0, i);
-        savebtn.ReadByte(input.value, edit.edit, edit.palette);
+        savebtn.ReadByte(input.value, edit);
     }
 }

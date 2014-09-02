@@ -48,14 +48,17 @@ public class savebtn : MonoBehaviour
            });
         input.onSubmit.AddListener((str)=>
         {
-            ReadByte(str, edit.edit, edit.palette);
+            ReadByte(str, edit);
 
         });
 	}
-    public static void ReadByte(string scode,Texture2D src,Texture2D p)
+
+    public static void ReadByte(string scode,com_pixelEdit edit)
     {
         try
         {
+            var src = edit.edit;
+            var p = edit.palette;
             string strbase64 = System.Uri.UnescapeDataString(scode);
             byte[] bb = System.Convert.FromBase64String(strbase64);
             var s = LZMAHelper.DeCompress(new System.IO.MemoryStream(bb), (uint)bb.Length);
@@ -68,6 +71,7 @@ public class savebtn : MonoBehaviour
             int height = bb[seek]; seek++;
             if (height == 0) height = 256;
             Debug.Log("w=" + width + ",h=" + height);
+            edit.Resize(width, height);
             Color32[] pp = src.GetPixels32(0);
             for (int y = 0; y < height; y++)
             {
