@@ -12,13 +12,13 @@ public class loadbtn : MonoBehaviour {
             try
             {
                 
-                using (System.IO.Stream s = System.IO.File.OpenRead(Application.temporaryCachePath + "/temp_p.png"))
+                using (System.IO.Stream s = System.IO.File.OpenRead(Application.persistentDataPath + "/temp_p.png"))
                 {
                     byte[] bb = new byte[s.Length];
                     s.Read(bb, 0, bb.Length);
                     pick.GetPalette().LoadImage(bb);
                 }
-                using (System.IO.Stream s = System.IO.File.OpenRead(Application.temporaryCachePath + "/temp_i.png"))
+                using (System.IO.Stream s = System.IO.File.OpenRead(Application.persistentDataPath + "/temp_i.png"))
                 {
                     byte[] bb = new byte[s.Length];
                     s.Read(bb, 0, bb.Length);
