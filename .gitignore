@@ -61,3 +61,8 @@ $RECYCLE.BIN/
 /unity/letusbead/*.sln
 /unity/TestBlock/bin
 /unity/TestBlock/*.csproj
+
+*.userprefs
+
+unity/letusbead/letusbead-csharp.v12.suo
+*.suo

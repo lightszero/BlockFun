@@ -1,8 +1,9 @@
-﻿Shader "Custom/pixel_sharp" {
+﻿Shader "Custom/pixel_sharp_normal" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_ColorTex ("ColorTex (RGB)", 2D) = "white" {}
 		_SharpTex ("SharpTex (RGB)", 2D) = "white" {}
+		_NormalTex ("NormalTex (RGB)", 2D) = "white" {}
 		_DrawSize ("DrawSize" , Vector)=(32,32,0,0)
 	}
 	SubShader {
@@ -16,7 +17,9 @@
 		sampler2D _MainTex;
 		sampler2D _ColorTex;
 		sampler2D _SharpTex;
+		sampler2D _NormalTex;
 		float2 _DrawSize;
+
 		struct Input {
 			float2 uv_MainTex;
 		};
@@ -34,7 +37,8 @@
 			float suy = frac(IN.uv_MainTex.y*_DrawSize.y);
 			float4 sc = tex2D (_SharpTex, float2(sux,suy));
 
-			o.Emission = cc.rgb*sc.rgb;
+			o.Albedo = cc.rgb*sc.rgb;
+			o.Normal = tex2D(_NormalTex,IN.uv_MainTex).xyz*2 -1;
 			o.Alpha = cc.a*sc.a;
 		}
 		ENDCG
