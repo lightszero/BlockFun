@@ -66,3 +66,7 @@ $RECYCLE.BIN/
 
 unity/letusbead/letusbead-csharp.v12.suo
 *.suo
+/unity/MidiPlayer/outweb
+/unity/MidiPlayer/*.sln
+/unity/MidiPlayer/*.suo
+/unity/MidiPlayer/*.csproj
