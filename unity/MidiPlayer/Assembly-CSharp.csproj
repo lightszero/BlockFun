@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{61EECA9F-02DF-C928-E551-97568E81EF09}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\UnityMidiSynth.cs" />
+     <Compile Include="Assets\Scripts\WaveShowsTest.cs" />
+     <Compile Include="Assets\Scripts\waveshow.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Analog\AnalogInstrument.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\BankManager.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Fm\Envelope.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Fm\FMInstrument.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Fm\IFMComponent.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Instrument.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\InstrumentBank.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Sfz\SfzInstrument.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Banks\Sfz\SfzRegion.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Effects\BasicAudioEffect.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Effects\Echo.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Effects\dBMeter.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Midi\MidiEvent.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Midi\MidiFile.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Midi\MidiHeader.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Midi\MidiHelper.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Midi\MidiTrack.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Sequencer\MidiSequencer.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Sequencer\MidiSequencerEvent.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Synthesis\NoteRegistryKey.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Synthesis\StreamSynthesizer.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Synthesis\SynthHelper.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Synthesis\Voice.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\DSP\BiQuadLowPass.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\DSP\SincLowPass.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\DataChunk.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\FactChunk.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\FormatChunk.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\IChunk.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\MasterChunk.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\Sample.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\WaveFile.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\WaveFileReader.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\WaveFileWriter.cs" />
+     <Compile Include="Assets\codelib\CSharpSynth\Wave\WaveHelper.cs" />
+     <Compile Include="Assets\codelib\fft.cs" />
+     <None Include="Assets\resources\Midis\carnival.mid.txt" />
+     <None Include="Assets\resources\Midis\GROOVE.MID.txt" />
+     <None Include="Assets\resources\midi.list.txt" />
+     <None Include="Assets\resources\Midis\FF6_Forever_Rachel.mid.txt" />
+     <None Include="Assets\resources\Midis\xmasmedl.mid.txt" />
+     <None Include="Assets\resources\Midis\ISLAND.MID.txt" />
+     <None Include="Assets\resources\Midis\N64ZeldaOcarinaEnding.mid.txt" />
+     <None Include="Assets\resources\Midis\z5hracermx2.mid.txt" />
+     <None Include="Assets\resources\Midis\SuperMario64_-_DireDireDocksRemixXG.mid.txt" />
+     <None Include="Assets\resources\Midis\hdl.mid.txt" />
+     <None Include="Assets\resources\Midis\ZFS_Title_V1_3.mid.txt" />
+     <None Include="Assets\resources\Midis\The-Lylat-Wars_1-2.mid.txt" />
+     <None Include="Assets\resources\Midis\luf1them.mid.txt" />
+     <None Include="Assets\resources\Midis\mtt2_outside.mid.txt" />
+     <None Include="Assets\resources\Midis\alad09.mid.txt" />
+     <None Include="Assets\resources\Midis\SSBM_HyruleTemple_Alt_FireEmblem.mid.txt" />
+     <None Include="Assets\resources\Midis\BattleGM.mid.txt" />
+     <None Include="Assets\resources\Midis\DrumSolo_BlocksAway.mid.txt" />
+     <None Include="Assets\resources\FM Bank\fm.txt" />
+     <None Include="Assets\resources\Midis\DDRMAX2_ranking_SB_zb.mid.txt" />
+     <None Include="Assets\resources\Analog Bank\analog.txt" />
+     <None Include="Assets\resources\Midis\WALTZFLR.MID.txt" />
+     <None Include="Assets\resources\Midis\tme.mid.txt" />
+     <None Include="Assets\resources\Midis\T_RaidenII_Stage1Theme.mid.txt" />
+     <None Include="Assets\resources\Midis\eternia.mid.txt" />
+     <None Include="Assets\resources\Midis\cbfd_heist.mid.txt" />
+     <None Include="Assets\resources\Midis\mirror_speedeaters2.mid.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

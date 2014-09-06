@@ -1,0 +1,3 @@
+[BankFile]
+Square/analog/0/127/i/
+WhiteNoise/analog/0/127/d/
