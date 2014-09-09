@@ -6,6 +6,7 @@
 	SubShader {
 		Tags { "RenderType"="Opaque" "Queue"="Transparent" }
 		LOD 200
+		Cull Off
 		ZWrite Off
 		Blend SrcAlpha OneMinusSrcAlpha
 		CGPROGRAM

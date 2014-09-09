@@ -8,52 +8,79 @@ public class savebtn : MonoBehaviour
     public com_pixelEdit edit;
     // Use this for
     public UnityEngine.UI.InputField input;
-    void Start() {
-        this.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
+    static System.Security.Cryptography.SHA1 sha1 = new System.Security.Cryptography.SHA1Managed();
+    void Start()
+    {
+        this.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(
+            // () =>
+            //{
+            //    List<byte> bytes = new List<byte>();
+            //    var pc = edit.palette.GetPixels32(0);
+            //    var ic = edit.edit.GetPixels32(0);
+            //    Dictionary<byte, Color32> usep = new Dictionary<byte, Color32>();
+            //    bytes.Add((byte)edit.edit.width);
+            //    bytes.Add((byte)edit.edit.height);
+
+           //    for (int i = 0; i < ic.Length; i++)
+            //    {
+            //        byte ind= ic[i].a;
+            //        bytes.Add(ind);
+
+           //        if(ind>0)
+            //        {
+            //            if(usep.ContainsKey(ind)==false)
+            //            {
+            //                usep.Add(ind,pc[ind]);
+            //            }
+            //        }
+            //    }
+            //    bytes.Add((byte)usep.Count);
+            //    foreach(var up in usep)
+            //    {
+            //        bytes.Add(up.Key);
+            //        bytes.Add(up.Value.r);
+            //        bytes.Add(up.Value.g);
+            //        bytes.Add(up.Value.b);
+            //    }
+
+           //    var s =           LZMAHelper.Compress(new System.IO.MemoryStream(bytes.ToArray()), (uint)bytes.Count);
+            //    byte[] nb = new byte[s.Length];
+            //    s.Read(nb, 0, nb.Length);
+            //    string str = System.Convert.ToBase64String(nb);
+            //    string str2 = System.Uri.EscapeDataString(str);
+            //    input.value = str2;
+            //    Debug.Log(input.value.Length);
+            //}
+           () =>
            {
-               List<byte> bytes = new List<byte>();
                var pc = edit.palette.GetPixels32(0);
                var ic = edit.edit.GetPixels32(0);
-               Dictionary<byte, Color32> usep = new Dictionary<byte, Color32>();
-               bytes.Add((byte)edit.edit.width);
-               bytes.Add((byte)edit.edit.height);
+               Texture2D tout = new Texture2D(edit.edit.width, edit.edit.height, TextureFormat.ARGB32, false);
+               Color32[] cout = new Color32[ic.Length];
                for (int i = 0; i < ic.Length; i++)
                {
-                   byte ind= ic[i].a;
-                   bytes.Add(ind);
-                   if(ind>0)
-                   {
-                       if(usep.ContainsKey(ind)==false)
-                       {
-                           usep.Add(ind,pc[ind]);
-                       }
-                   }
+                   cout[i] = pc[ic[i].a];
                }
-               bytes.Add((byte)usep.Count);
-               foreach(var up in usep)
-               {
-                   bytes.Add(up.Key);
-                   bytes.Add(up.Value.r);
-                   bytes.Add(up.Value.g);
-                   bytes.Add(up.Value.b);
-               }
-
-               var s =           LZMAHelper.Compress(new System.IO.MemoryStream(bytes.ToArray()), (uint)bytes.Count);
-               byte[] nb = new byte[s.Length];
-               s.Read(nb, 0, nb.Length);
-               string str = System.Convert.ToBase64String(nb);
-               string str2 = System.Uri.EscapeDataString(str);
-               input.value = str2;
-               Debug.Log(input.value.Length);
-           });
-        input.onSubmit.AddListener((str)=>
+               tout.SetPixels32(cout, 0);
+               tout.Apply();
+               byte[] src = tout.EncodeToPNG();
+               string hash = System.Uri.EscapeDataString(System.Convert.ToBase64String(sha1.ComputeHash(src)));
+               string file = System.Uri.EscapeDataString("test.png");
+               string resp = System.Uri.EscapeDataString("game01");
+               string len = src.Length.ToString();
+               string url = "http://localhost:25080/filepost?d=" + resp + "&f=" + file + "&h=" + hash + "&l=" + len;
+               www = new WWW(url, src);
+               Debug.Log("url="+url);
+           }
+           );
+        input.onSubmit.AddListener((str) =>
         {
             ReadByte(str, edit);
 
         });
-	}
-
-    public static void ReadByte(string scode,com_pixelEdit edit)
+    }
+    WWW www;
+    public static void ReadByte(string scode, com_pixelEdit edit)
     {
         try
         {
@@ -107,6 +134,13 @@ public class savebtn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (www != null)
+        {
+            if (www.isDone)
+            {
+                www = null;
+                Debug.Log("done.");
+            }
+        }
     }
 }
