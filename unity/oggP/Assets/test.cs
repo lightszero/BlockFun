@@ -8,7 +8,7 @@ public class test : MonoBehaviour {
         var bs = (Resources.Load("1.ogg") as TextAsset).bytes;
 
         System.IO.MemoryStream ms = new System.IO.MemoryStream(bs);
-        OggPlayer p = new OggPlayer(ms, true);
+        OggPlayer p = new OggPlayer(ms);
         this.GetComponent<DSPPlayer>().Play(p);
 	}
 	

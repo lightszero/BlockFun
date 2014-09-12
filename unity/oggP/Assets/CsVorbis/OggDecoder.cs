@@ -12,7 +12,7 @@ namespace OggSharp
 {
     public struct PCMChunk
     {
-        public byte[] Bytes;
+        public float[] Bytes;
         public int Length;
         public int Channels;
         public int Rate;
@@ -77,7 +77,7 @@ namespace OggSharp
         private Block vb;
         private float[][][] _pcm = new float[1][][];
         private int[] _index;
-        private byte[] convbuffer = new byte[8192];
+        private float[] convbuffer = new float[4096];
 
         #endregion Private variables
 
@@ -1023,115 +1023,137 @@ namespace OggSharp
 
         private void ConvertChunk(int bout, int bytesRead, float[][] pcm)
         {
-            bool clipflag = false;
-            // convert floats to 16 bit signed ints (host order) and
-            // interleave
 
-#if UNSAFE
-
-            unsafe
+            for (int i = 0; i < vi.channels; i++)
             {
-                fixed (byte* ptrStart = convbuffer)
-                fixed (float* pcmStart1 = pcm[0])
-                fixed (float* pcmStart2 = pcm.Length == 2 ? pcm[1] : null)
+
+
+                float[] currentPcm = (i == 0 ? pcm[0] : pcm[1]);
+                int ptr = (bytesRead + (i));
+
+                //int ptr=i;
+                int mono = _index[i];
+                for (int j = 0; j < bout; j++)
                 {
 
-#endif
+                    float val = (currentPcm[mono + j]);
 
-                    for (int i = 0; i < vi.channels; i++)
-                    {
-
-#if UNSAFE
-
-                        byte* ptr = ptrStart + (bytesRead + (i * 2));
-                        float* currentPcm = (i == 0 ? pcmStart1 : pcmStart2);
-
-#else
-
-                        float[] currentPcm = (i == 0 ? pcm[0] : pcm[1]);
-                        int ptr = (bytesRead + (i * 2));
-
-#endif
-
-                        //int ptr=i;
-                        int mono = _index[i];
-                        for (int j = 0; j < bout; j++)
-                        {
-
-#if UNSAFE
-
-                            int val = (int)(*(currentPcm + mono + j) * 32767.0f);
-
-#else
-
-                            int val = (int)(currentPcm[mono + j] * 32767.0);
-
-#endif
-
-                            //        short val=(short)(pcm[i][mono+j]*32767.);
-                            //        int val=(int)Math.round(pcm[i][mono+j]*32767.);
-                            // might as well guard against clipping
-                            if (val > 32767)
-                            {
-                                val = 32767;
-                                clipflag = true;
-                            }
-                            if (val < -32768)
-                            {
-                                val = -32768;
-                                clipflag = true;
-                            }
-                            if (val < 0) val = val | 0x8000;
-
-                            if (BitConverter.IsLittleEndian)
-                            {
-
-#if UNSAFE
-
-                                *ptr = (byte)val;
-                                *(ptr + 1) = (byte)((uint)val >> 8);
-
-
-#else
-
-                                convbuffer[ptr] = (byte)(val);
-                                convbuffer[ptr + 1] = (byte)((uint)val >> 8);
-
-#endif
-
-                            }
-                            else
-                            {
-
-#if UNSAFE
-
-                                *ptr = (byte)((uint)val >> 8);
-                                *(ptr + 1) = (byte)val;
-
-#else
-
-                                convbuffer[ptr] = (byte)((uint)val >> 8);
-                                convbuffer[ptr + 1] = (byte)(val);
-
-#endif
-
-                            }
-
-                            ptr += 2 * (vi.channels);
-                        }
-                    }
-
-#if UNSAFE
-
+                    convbuffer[ptr] = val;
+                    ptr += (vi.channels);
                 }
             }
 
-#endif
+            return;
 
-            if (clipflag)
-            {
-                // throw new Exception("Clipping in frame "+vd.sequence);
-            }
+//            bool clipflag = false;
+//            // convert floats to 16 bit signed ints (host order) and
+//            // interleave
+
+//#if UNSAFE
+
+//            unsafe
+//            {
+//                fixed (byte* ptrStart = convbuffer)
+//                fixed (float* pcmStart1 = pcm[0])
+//                fixed (float* pcmStart2 = pcm.Length == 2 ? pcm[1] : null)
+//                {
+
+//#endif
+
+//            for (int i = 0; i < vi.channels; i++)
+//            {
+
+//#if UNSAFE
+
+//                        byte* ptr = ptrStart + (bytesRead + (i * 2));
+//                        float* currentPcm = (i == 0 ? pcmStart1 : pcmStart2);
+
+//#else
+
+//                float[] currentPcm = (i == 0 ? pcm[0] : pcm[1]);
+//                int ptr = (bytesRead + (i * 2));
+
+//#endif
+
+//                //int ptr=i;
+//                int mono = _index[i];
+//                for (int j = 0; j < bout; j++)
+//                {
+
+//#if UNSAFE
+
+//                            int val = (int)(*(currentPcm + mono + j) * 32767.0f);
+
+//#else
+
+//                    int val = (int)(currentPcm[mono + j] * 32767.0);
+
+//#endif
+
+//                    //        short val=(short)(pcm[i][mono+j]*32767.);
+//                    //        int val=(int)Math.round(pcm[i][mono+j]*32767.);
+//                    // might as well guard against clipping
+//                    if (val > 32767)
+//                    {
+//                        val = 32767;
+//                        clipflag = true;
+//                    }
+//                    if (val < -32768)
+//                    {
+//                        val = -32768;
+//                        clipflag = true;
+//                    }
+//                    if (val < 0) val = val | 0x8000;
+
+//                    if (BitConverter.IsLittleEndian)
+//                    {
+
+//#if UNSAFE
+
+//                                *ptr = (byte)val;
+//                                *(ptr + 1) = (byte)((uint)val >> 8);
+
+
+//#else
+
+//                        convbuffer[ptr] = (byte)(val);
+//                        convbuffer[ptr + 1] = (byte)((uint)val >> 8);
+
+//#endif
+
+//                    }
+//                    else
+//                    {
+
+//#if UNSAFE
+
+//                                *ptr = (byte)((uint)val >> 8);
+//                                *(ptr + 1) = (byte)val;
+
+//#else
+
+//                        convbuffer[ptr] = (byte)((uint)val >> 8);
+//                        convbuffer[ptr + 1] = (byte)(val);
+
+//#endif
+
+//                    }
+
+//                    ptr += 2 * (vi.channels);
+//                }
+//            }
+
+//#if UNSAFE
+
+//                }
+//            }
+
+//#endif
+
+//            if (clipflag)
+//            {
+//                // throw new Exception("Clipping in frame "+vd.sequence);
+//            }
         }
 
         #endregion Private methods
@@ -1236,7 +1258,7 @@ namespace OggSharp
                                 {
                                     float[][] pcm = _pcm[0];
                                     int bout = (samples < convsize ? samples : convsize);
-                                    int chunkSize = 2 * vi.channels * bout;
+                                    int chunkSize = vi.channels * bout;
                                     pcm_offset += samples;
 
                                     if (bytesRead + chunkSize > convbuffer.Length)
@@ -1295,17 +1317,17 @@ namespace OggSharp
         /// </summary>
         /// <param name="input">Input ogg data</param>
         /// <returns>Fully decoded PCM data</returns>
-        public static PCMChunk Decode(Stream input)
-        {
-            OggDecoder decoder = new OggDecoder();
-            decoder.Initialize(input);
-            MemoryStream ms = new MemoryStream(4096);
-            foreach (PCMChunk chunk in decoder)
-            {
-                ms.Write(chunk.Bytes, 0, chunk.Length);
-            }
-            return new PCMChunk { Bytes = ms.ToArray(), Channels = (decoder.Stereo ? 2 : 1), Length = (int)ms.Length, Rate = decoder.SampleRate };
-        }
+        //public static PCMChunk Decode(Stream input)
+        //{
+        //    OggDecoder decoder = new OggDecoder();
+        //    decoder.Initialize(input);
+        //    MemoryStream ms = new MemoryStream(4096);
+        //    foreach (PCMChunk chunk in decoder)
+        //    {
+        //        ms.Write(chunk.Bytes, 0, chunk.Length);
+        //    }
+        //    return new PCMChunk { Bytes = ms.ToArray(), Channels = (decoder.Stereo ? 2 : 1), Length = (int)ms.Length, Rate = decoder.SampleRate };
+        //}
 
         #endregion Public methods
 

@@ -46,13 +46,13 @@ public class OggPlayer : ISound
                 for (int c = 0; c < channels; c++)
                 {
                     float a = 0;
-                    if ((i + chunkseed) * channels < now.Value.Length/2)
+                    if ((i + chunkseed) * channels < now.Value.Length)
                     {
 
-                        int ii=((i + chunkseed) * channels + c)*2;
-                        short bv = (short)( now.Value.Bytes[ii] + now.Value.Bytes[ii + 1] * 256);
+                        int ii=((i + chunkseed) * channels + c);
+                        //short bv = (short)( now.Value.Bytes[ii] + now.Value.Bytes[ii + 1] * 256);
 
-                        a = (float)bv / (float)short.MaxValue;
+                        a = now.Value.Bytes[ii];
 
                         
                     }
