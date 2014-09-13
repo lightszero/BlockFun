@@ -17,7 +17,7 @@ class NVOggPlayer : ISound
     }
     public void Mix(float[] data, int channels,float volume)
     {
-        if (reader.SampleRate == 44100 && reader.Channels == 2)
+        if (reader.SampleRate == 44100 && reader.Channels == channels)
         {
             float[] ndata = new float[data.Length];
             int read = reader.ReadSamples(ndata, 0, ndata.Length);
@@ -45,8 +45,7 @@ class NVOggPlayer : ISound
         }
         else
         {
-            Debug.Log(reader.SampleRate);
-
+            Debug.Log("OnlyPlay 44100,now rate is"+reader.SampleRate);
         }
 
     }
