@@ -21,7 +21,8 @@ public class DSPPlayer : MonoBehaviour
     {
 
     }
-
+    [Range(0,1)]
+    public float volume = 1.0f;
     public void Play(ISound sound)
     {
         lock (_lock)
@@ -53,7 +54,7 @@ public class DSPPlayer : MonoBehaviour
                         remove = s;
                         continue;
                     }
-                    s.Mix(data, channels);
+                    s.Mix(data, channels,volume);
                 }
                 sounds.Remove(remove);
             }
@@ -69,7 +70,7 @@ public class DSPPlayer : MonoBehaviour
 public interface ISound
 {
     //混音
-    void Mix(float[] data, int channels);
+    void Mix(float[] data, int channels,float volume);
 
     bool isPlaying
     {

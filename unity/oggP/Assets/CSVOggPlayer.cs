@@ -3,11 +3,11 @@ using System.Collections;
 using OggSharp;
 using System.Collections.Generic;
 
-public class OggPlayer : ISound
+public class CSVOggPlayer : ISound
 {
     OggSharp.OggDecoder decoder = new OggSharp.OggDecoder();
     IEnumerator it = null;
-    public OggPlayer(System.IO.Stream s, bool seek = false)
+    public CSVOggPlayer(System.IO.Stream s, bool seek = false)
     {
         decoder.Initialize(s, seek);
         it = decoder.GetEnumerator();
@@ -19,7 +19,7 @@ public class OggPlayer : ISound
     }
     PCMChunk? now = null;
     int chunkseed = 0;
-    public void Mix(float[] data, int channels)
+    public void Mix(float[] data, int channels,float volume)
     {
 
         int len = data.Length / channels;
