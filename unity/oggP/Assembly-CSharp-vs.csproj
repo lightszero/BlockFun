@@ -1,119 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{D8F6C3E9-0A98-2735-3779-8B64366CDC3F}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8F6C3E9-0A98-2735-3779-8B64366CDC3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_WP8;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_LAZY_METHOD_CACHING;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;UNITY_WINRT;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_SERIALIZATION_BY_CODEGENERATION;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_WP8;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_LAZY_METHOD_CACHING;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;UNITY_WINRT;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_SERIALIZATION_BY_CODEGENERATION;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
+    <Reference Include="System" />
     <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/PlaybackEngines/WP8Support/Tools/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/PlaybackEngines/WP8Support/Tools/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CSVOggPlayer.cs" />
-     <Compile Include="Assets\CsVorbis\AllocChain.cs" />
-     <Compile Include="Assets\CsVorbis\Block.cs" />
-     <Compile Include="Assets\CsVorbis\Buffer.cs" />
-     <Compile Include="Assets\CsVorbis\CodeBook.cs" />
-     <Compile Include="Assets\CsVorbis\Comment.cs" />
-     <Compile Include="Assets\CsVorbis\Drft.cs" />
-     <Compile Include="Assets\CsVorbis\DspState.cs" />
-     <Compile Include="Assets\CsVorbis\EncodeAuxNearestMatch.cs" />
-     <Compile Include="Assets\CsVorbis\EncodeAuxThreshMatch.cs" />
-     <Compile Include="Assets\CsVorbis\Floor0.cs" />
-     <Compile Include="Assets\CsVorbis\Floor1.cs" />
-     <Compile Include="Assets\CsVorbis\FuncFloor.cs" />
-     <Compile Include="Assets\CsVorbis\FuncMapping.cs" />
-     <Compile Include="Assets\CsVorbis\FuncResidue.cs" />
-     <Compile Include="Assets\CsVorbis\FuncTime.cs" />
-     <Compile Include="Assets\CsVorbis\Info.cs" />
-     <Compile Include="Assets\CsVorbis\InfoMode.cs" />
-     <Compile Include="Assets\CsVorbis\Lookup.cs" />
-     <Compile Include="Assets\CsVorbis\Lpc.cs" />
-     <Compile Include="Assets\CsVorbis\Lsp.cs" />
-     <Compile Include="Assets\CsVorbis\Mapping0.cs" />
-     <Compile Include="Assets\CsVorbis\Mdct.cs" />
-     <Compile Include="Assets\CsVorbis\OggDecoder.cs" />
-     <Compile Include="Assets\CsVorbis\Packet.cs" />
-     <Compile Include="Assets\CsVorbis\Page.cs" />
-     <Compile Include="Assets\CsVorbis\PsyInfo.cs" />
-     <Compile Include="Assets\CsVorbis\PsyLook.cs" />
-     <Compile Include="Assets\CsVorbis\Residue0.cs" />
-     <Compile Include="Assets\CsVorbis\Residue1.cs" />
-     <Compile Include="Assets\CsVorbis\Residue2.cs" />
-     <Compile Include="Assets\CsVorbis\StaticCodeBook.cs" />
-     <Compile Include="Assets\CsVorbis\StreamState.cs" />
-     <Compile Include="Assets\CsVorbis\SyncState.cs" />
-     <Compile Include="Assets\CsVorbis\Time0.cs" />
-     <Compile Include="Assets\CsVorbis\VorbisFile.cs" />
-     <Compile Include="Assets\CsVorbis\csorbisException.cs" />
-     <Compile Include="Assets\DSPPlayer.cs" />
-     <Compile Include="Assets\NVOggPlayer.cs" />
-     <Compile Include="Assets\NVorbis\BufferedReadStream.cs" />
-     <Compile Include="Assets\NVorbis\DataPacket.cs" />
-     <Compile Include="Assets\NVorbis\Huffman.cs" />
-     <Compile Include="Assets\NVorbis\IContainerReader.cs" />
-     <Compile Include="Assets\NVorbis\IPacketProvider.cs" />
-     <Compile Include="Assets\NVorbis\IVorbisStreamStatus.cs" />
-     <Compile Include="Assets\NVorbis\Mdct.cs" />
-     <Compile Include="Assets\NVorbis\NewStreamEventArgs.cs" />
-     <Compile Include="Assets\NVorbis\Ogg\OggContainerReader.cs" />
-     <Compile Include="Assets\NVorbis\Ogg\OggCrc.cs" />
-     <Compile Include="Assets\NVorbis\Ogg\OggPacket.cs" />
-     <Compile Include="Assets\NVorbis\Ogg\OggPacketReader.cs" />
-     <Compile Include="Assets\NVorbis\Ogg\OggPageFlags.cs" />
-     <Compile Include="Assets\NVorbis\ParameterChangeEventArgs.cs" />
-     <Compile Include="Assets\NVorbis\RingBuffer.cs" />
-     <Compile Include="Assets\NVorbis\StreamReadBuffer.cs" />
-     <Compile Include="Assets\NVorbis\Utils.cs" />
-     <Compile Include="Assets\NVorbis\VorbisCodebook.cs" />
-     <Compile Include="Assets\NVorbis\VorbisFloor.cs" />
-     <Compile Include="Assets\NVorbis\VorbisMapping.cs" />
-     <Compile Include="Assets\NVorbis\VorbisMode.cs" />
-     <Compile Include="Assets\NVorbis\VorbisReader.cs" />
-     <Compile Include="Assets\NVorbis\VorbisResidue.cs" />
-     <Compile Include="Assets\NVorbis\VorbisStreamDecoder.cs" />
-     <Compile Include="Assets\NVorbis\VorbisTime.cs" />
-     <Compile Include="Assets\test.cs" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\CSVOggPlayer.cs" />
+    <Compile Include="Assets\CsVorbis\AllocChain.cs" />
+    <Compile Include="Assets\CsVorbis\Block.cs" />
+    <Compile Include="Assets\CsVorbis\Buffer.cs" />
+    <Compile Include="Assets\CsVorbis\CodeBook.cs" />
+    <Compile Include="Assets\CsVorbis\Comment.cs" />
+    <Compile Include="Assets\CsVorbis\Drft.cs" />
+    <Compile Include="Assets\CsVorbis\DspState.cs" />
+    <Compile Include="Assets\CsVorbis\EncodeAuxNearestMatch.cs" />
+    <Compile Include="Assets\CsVorbis\EncodeAuxThreshMatch.cs" />
+    <Compile Include="Assets\CsVorbis\Floor0.cs" />
+    <Compile Include="Assets\CsVorbis\Floor1.cs" />
+    <Compile Include="Assets\CsVorbis\FuncFloor.cs" />
+    <Compile Include="Assets\CsVorbis\FuncMapping.cs" />
+    <Compile Include="Assets\CsVorbis\FuncResidue.cs" />
+    <Compile Include="Assets\CsVorbis\FuncTime.cs" />
+    <Compile Include="Assets\CsVorbis\Info.cs" />
+    <Compile Include="Assets\CsVorbis\InfoMode.cs" />
+    <Compile Include="Assets\CsVorbis\Lookup.cs" />
+    <Compile Include="Assets\CsVorbis\Lpc.cs" />
+    <Compile Include="Assets\CsVorbis\Lsp.cs" />
+    <Compile Include="Assets\CsVorbis\Mapping0.cs" />
+    <Compile Include="Assets\CsVorbis\Mdct.cs" />
+    <Compile Include="Assets\CsVorbis\OggDecoder.cs" />
+    <Compile Include="Assets\CsVorbis\Packet.cs" />
+    <Compile Include="Assets\CsVorbis\Page.cs" />
+    <Compile Include="Assets\CsVorbis\PsyInfo.cs" />
+    <Compile Include="Assets\CsVorbis\PsyLook.cs" />
+    <Compile Include="Assets\CsVorbis\Residue0.cs" />
+    <Compile Include="Assets\CsVorbis\Residue1.cs" />
+    <Compile Include="Assets\CsVorbis\Residue2.cs" />
+    <Compile Include="Assets\CsVorbis\StaticCodeBook.cs" />
+    <Compile Include="Assets\CsVorbis\StreamState.cs" />
+    <Compile Include="Assets\CsVorbis\SyncState.cs" />
+    <Compile Include="Assets\CsVorbis\Time0.cs" />
+    <Compile Include="Assets\CsVorbis\VorbisFile.cs" />
+    <Compile Include="Assets\CsVorbis\csorbisException.cs" />
+    <Compile Include="Assets\DSPPlayer.cs" />
+    <Compile Include="Assets\NVOggPlayer.cs" />
+    <Compile Include="Assets\NVorbis\BufferedReadStream.cs" />
+    <Compile Include="Assets\NVorbis\DataPacket.cs" />
+    <Compile Include="Assets\NVorbis\Huffman.cs" />
+    <Compile Include="Assets\NVorbis\IContainerReader.cs" />
+    <Compile Include="Assets\NVorbis\IPacketProvider.cs" />
+    <Compile Include="Assets\NVorbis\IVorbisStreamStatus.cs" />
+    <Compile Include="Assets\NVorbis\Mdct.cs" />
+    <Compile Include="Assets\NVorbis\NewStreamEventArgs.cs" />
+    <Compile Include="Assets\NVorbis\Ogg\OggContainerReader.cs" />
+    <Compile Include="Assets\NVorbis\Ogg\OggCrc.cs" />
+    <Compile Include="Assets\NVorbis\Ogg\OggPacket.cs" />
+    <Compile Include="Assets\NVorbis\Ogg\OggPacketReader.cs" />
+    <Compile Include="Assets\NVorbis\Ogg\OggPageFlags.cs" />
+    <Compile Include="Assets\NVorbis\ParameterChangeEventArgs.cs" />
+    <Compile Include="Assets\NVorbis\RingBuffer.cs" />
+    <Compile Include="Assets\NVorbis\StreamReadBuffer.cs" />
+    <Compile Include="Assets\NVorbis\Utils.cs" />
+    <Compile Include="Assets\NVorbis\VorbisCodebook.cs" />
+    <Compile Include="Assets\NVorbis\VorbisFloor.cs" />
+    <Compile Include="Assets\NVorbis\VorbisMapping.cs" />
+    <Compile Include="Assets\NVorbis\VorbisMode.cs" />
+    <Compile Include="Assets\NVorbis\VorbisReader.cs" />
+    <Compile Include="Assets\NVorbis\VorbisResidue.cs" />
+    <Compile Include="Assets\NVorbis\VorbisStreamDecoder.cs" />
+    <Compile Include="Assets\NVorbis\VorbisTime.cs" />
+    <Compile Include="Assets\test.cs" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files (x86)/Unity/Editor46/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -123,5 +124,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
