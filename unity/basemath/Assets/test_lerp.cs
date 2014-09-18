@@ -48,7 +48,7 @@ public class test_lerp : MonoBehaviour {
     List<MeshRenderer> arraycang = new List<MeshRenderer>();
 
     List<hongyinarmy> arrayhong = new List<hongyinarmy>();
-    Vector3 honglookat = Vector3.right;
+    Vector3 honglookat = Vector3.up;
     Vector3 honglookatWant = Vector3.left;
     
 	// Update is called once per frame
