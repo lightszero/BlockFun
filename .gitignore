@@ -71,3 +71,5 @@ unity/letusbead/letusbead-csharp.v12.suo
 /unity/MidiPlayer/*.suo
 /unity/MidiPlayer/*.csproj
 /unity/basemath/outweb
+*.csproj
+*.sln
