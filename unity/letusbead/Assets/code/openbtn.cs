@@ -10,7 +10,7 @@ public class openbtn : MonoBehaviour {
             {
                 try
                 {
-                    Application.OpenURL(GetURL.fullUrl + "#" + input.value);
+                    Application.OpenURL(GetURL.fullUrl + "#" + input.text);
                 }
                 catch
                 {

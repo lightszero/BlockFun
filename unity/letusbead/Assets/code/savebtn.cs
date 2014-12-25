@@ -73,7 +73,7 @@ public class savebtn : MonoBehaviour
                Debug.Log("url="+url);
            }
            );
-        input.onSubmit.AddListener((str) =>
+        input.onEndEdit.AddListener((str) =>
         {
             ReadByte(str, edit);
 

@@ -330,10 +330,10 @@ public class com_ColorPick : MonoBehaviour
                 }
                 else
                 {
-                    vr.value = ((int)(useColor.r * 255)).ToString();
+                    vr.text = ((int)(useColor.r * 255)).ToString();
                 }
             };
-            vr.onSubmit.AddListener(change);
+            vr.onEndEdit.AddListener(change);
         }
         {
             UnityAction<string> change = (v) =>
@@ -348,10 +348,10 @@ public class com_ColorPick : MonoBehaviour
                 }
                 else
                 {
-                    vg.value = ((int)(useColor.g * 255)).ToString();
+                    vg.text = ((int)(useColor.g * 255)).ToString();
                 }
             };
-            vg.onSubmit.AddListener(change);
+            vg.onEndEdit.AddListener(change);
         }
         {
             UnityAction<string> change = (v) =>
@@ -366,10 +366,10 @@ public class com_ColorPick : MonoBehaviour
                 }
                 else
                 {
-                    vb.value = ((int)(useColor.b * 255)).ToString();
+                    vb.text = ((int)(useColor.b * 255)).ToString();
                 }
             };
-            vb.onSubmit.AddListener(change);
+            vb.onEndEdit.AddListener(change);
         }
     }
     void ChangeColor()
@@ -470,9 +470,9 @@ public class com_ColorPick : MonoBehaviour
         sr.value = useColor.r;
         sg.value = useColor.g;
         sb.value = useColor.b;
-        vr.value = ((int)(useColor.r * 255)).ToString();
-        vg.value = ((int)(useColor.g * 255)).ToString();
-        vb.value = ((int)(useColor.b * 255)).ToString();
+        vr.text = ((int)(useColor.r * 255)).ToString();
+        vg.text = ((int)(useColor.g * 255)).ToString();
+        vb.text = ((int)(useColor.b * 255)).ToString();
 
 
         //重新定位选中色板位置

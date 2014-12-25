@@ -18,8 +18,8 @@ public class GetURL : MonoBehaviour
         int i = fullUrl.IndexOf('#');
         if(i<=0)return;
 
-        input.value = fullUrl.Substring(i + 1);
+        input.text = fullUrl.Substring(i + 1);
         fullUrl = fullUrl.Substring(0, i);
-        savebtn.ReadByte(input.value, edit);
+        savebtn.ReadByte(input.text, edit);
     }
 }
